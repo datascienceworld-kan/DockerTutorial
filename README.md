@@ -80,6 +80,20 @@ Docker compose can run all services, which delared inside docker-compose.yaml fi
 docker-compose up -d
 ```
 
+# Push docker images to dockerhub
+Dockerhub is a repository where we can download public docker images of community and store our docker images. Let's register your account on [Dockerhub](https://hub.docker.com/) and sign in on your local machine:
+
+```
+docker login # require you to input username and password
+```
+If you have a docker image on local, how can you distribute it to community? Docker CLI allows you to push your own docker image on local by tagging docker image with your username.
+
+```
+docker tag frontend:0.0.1 YOUR_DOCKER_HUB_USERNAME/frontend:0.0.1
+docker push YOUR_DOCKER_HUB_USERNAME/frontend:0.0.1
+```
+This command will link local docker image `frontend:0.0.1` to your remote docker image `YOUR_DOCKER_HUB_USERNAME/frontend:0.0.1` stored inside your docker hub user.
+
 # Reference
 1. [Docker Introduction Slide - Pham Dinh Khanh](https://drive.google.com/file/d/1VWkS5dItymY5pI-93ahVj9vJB0JNAnKJ/view?usp=sharing)
 2. [Docker cheatsheet geeks-for-geeks](https://www.geeksforgeeks.org/docker-cheat-sheet/)
